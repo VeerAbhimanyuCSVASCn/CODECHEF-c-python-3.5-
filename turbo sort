@@ -1,0 +1,23 @@
+#include <iostream>
+#include<stdio.h>
+#include<set>
+typedef std::multiset<int>::iterator It;
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+    multiset<int> a;
+    int i,b;
+    cin>>i;
+    while(i--)
+    {
+        cin>>b;
+        a.insert(b);
+    }
+
+for (It it=a.begin(); it!=a.end(); ++it)
+    std::cout << ' ' << *it;
+}
