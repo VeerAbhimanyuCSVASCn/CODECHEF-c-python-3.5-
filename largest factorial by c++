@@ -1,0 +1,76 @@
+
+
+                              //beginner
+/*
+
+Input
+An integer t, 1<=t<=100, denoting the number of testcases, followed by t lines, each containing a single integer n, 1<=n<=100.
+
+Output
+For each integer n given at input, display a line with the value of n!
+
+Example
+Sample input:
+4
+1
+2
+5
+3
+Sample output:
+
+1
+2
+120
+6
+
+*/
+
+
+
+
+
+
+
+
+#include <iostream>
+#include<stdio.h>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+
+
+    int no;
+    cin>>no;
+
+    while (no--)
+    {
+    vector <int> a(170);
+    int d;
+    a[0]=1;
+    cin>>d;
+    d++;
+    int carry=0;
+
+        while(--d)
+        for(int s=0;s<170;s++)
+        {
+            int k=(a[s]*d+carry);
+            a[s]=k%10;
+            carry=k/10;
+        }
+
+        for(int i =168 ; i>=0;i--)
+            {
+                if(d==0 && a[i]==0)
+                  continue;
+                else
+                    d++;
+                cout<<a[i];}
+        cout<<endl;
+    }
+}
